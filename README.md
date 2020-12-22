@@ -1,6 +1,6 @@
 ## macos-golink-wrapper
 
-solution to "syscall.Mprotect panic: permission denied" in Golang on macOS Catalina 10.15.x
+solution to "syscall.Mprotect panic: permission denied" in Golang on macOS Catalina 10.15.x when using [gomonkey](https://github.com/agiledragon/gomonkey) or [gohook](https://github.com/brahma-adshonor/gohook)
 
 ## How it works
 
