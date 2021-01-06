@@ -8,14 +8,16 @@ import subprocess
 original_link_file = 'original_link'
 
 # link first
+output=None
 code=0
 try:
-    output = subprocess.check_output([os.path.dirname(__file__) + '/' + original_link_file] + sys.argv[1:])
+    output = subprocess.check_output([os.path.dirname(__file__) + '/' + original_link_file] + sys.argv[1:], cwd=os.getcwd())
 except subprocess.CalledProcessError as e:
     output = e.output
     code = e.returncode
 
-print output.replace(original_link_file, 'link')
+if output:
+    print output.replace(original_link_file, 'link')
 
 # change max_prot value to 0x7
 parser = argparse.ArgumentParser()
