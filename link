@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/env python3
 import os
 import sys
 import argparse
@@ -17,7 +17,8 @@ except subprocess.CalledProcessError as e:
     code = e.returncode
 
 if output:
-    print output.replace(original_link_file, 'link')
+    output_str = str(output, encoding='utf-8')
+    print(output_str.replace(original_link_file, 'link'))
 
 # change max_prot value to 0x7
 parser = argparse.ArgumentParser()
